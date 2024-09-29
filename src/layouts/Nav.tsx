@@ -22,9 +22,8 @@ export default function Nav() {
   const renderAccount = (
     <Stack
       sx={{
-        my: 3,
+        mt: '110px',
         mx: 2.5,
-        py: 2,
         px: 2.5,
         borderRadius: 1.5,
       }}
@@ -70,19 +69,13 @@ export default function Nav() {
   return (
     <Box
       sx={{
-        width: { lg: NAV.WIDTH },
+        height: 1,
+        position: 'fixed',
+        width: NAV.WIDTH,
+        boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.1)',
       }}
     >
-      <Box
-        sx={{
-          height: 1,
-          position: 'fixed',
-          width: NAV.WIDTH,
-          boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.1)',
-        }}
-      >
-        {renderContent}
-      </Box>
+      {renderContent}
     </Box>
   );
 }

@@ -17,26 +17,26 @@ const TestimonialCard = styled(Card)(({ theme }) => ({
     alignItems: 'center',
     padding: theme.spacing(3),
     backgroundColor: theme.palette.background.paper,
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: '16px',
     boxShadow: theme.shadows[1],
 }));
 
 const testimonials = [
     {
-        name: 'Ha Vy',
-        image: '/placeholder.svg?height=80&width=80',
+        name: 'Dang Dang',
+        image: '/images/test.jpg',
         text: 'This is the best dental clinic I have ever been to. The staff is friendly and professional. I highly recommend Molarrific Clinic to anyone looking for quality dental care.',
         rating: 5,
     },
     {
-        name: 'Vy Ha',
-        image: '/placeholder.svg?height=80&width=80',
+        name: 'Vy Vy',
+        image: '/images/test 2.jpg',
         text: 'I have been a patient of Molarrific Clinic for years and I am always impressed with the quality of care I receive. Having a beautiful smile is important.',
         rating: 4,
     },
     {
-        name: 'Cu Ha Vy',
-        image: '/placeholder.svg?height=80&width=80',
+        name: 'Dat Dat',
+        image: '/images/test 3.jpg',
         text: 'Every time I visit Molarrific Clinic, I am greeted with a smile. The staff is friendly and professional. I highly recommend this clinic to anyone looking for quality dental care.',
         rating: 5,
     },
@@ -73,7 +73,7 @@ const TestimonialSection: React.FC = () => {
                                     <Avatar
                                         src={testimonial.image}
                                         alt={testimonial.name}
-                                        sx={{ width: 80, height: 80, mb: 2 }}
+                                        sx={{ width: 120, height: 120, mb: 2 }}
                                     />
                                     <Typography variant="h6" component="h4" gutterBottom>
                                         {testimonial.name}

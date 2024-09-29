@@ -1,9 +1,9 @@
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { FC, ReactNode } from 'react';
-import { Outlet } from 'react-router-dom';
 
 import Header from './Header';
 import Nav from './Nav';
+import { Outlet } from 'react-router';
 
 interface SidebarLayoutProps {
     children?: ReactNode;
@@ -13,28 +13,18 @@ const DashboardLayout: FC<SidebarLayoutProps> = () => {
 
     return (
         <>
+            <Header />
             <Box
                 sx={{
-                    flex: 1,
-                    minHeight: '100vh',
-                    height: 'fit-contents',
+                    minHeight: 1,
+                    display: 'flex',
+                    flexDirection: { xs: 'column', lg: 'row' }
                 }}
             >
-                <Header />
                 <Nav />
-                <Container
-                    sx={{
-                        position: 'relative',
-                        zIndex: 5,
-                        display: 'block',
-                        flex: 1,
-                        overflow: 'auto',
-                    }}
-                >
-                    <Box display="block" mt={'100px'} height={'calc(100vh - 100px)'} width={1}>
-                        <Outlet />
-                    </Box>
-                </Container>
+                <Box position='fixed' top={100} left={300} maxWidth={'calc(100vw - 300px)'}>
+                    <Outlet />
+                </Box>
             </Box>
         </>
     );

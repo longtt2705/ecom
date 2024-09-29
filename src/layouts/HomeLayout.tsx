@@ -14,7 +14,7 @@ const HomeLayout: FC<Props> = () => {
     return (
         <>
             <Header />
-            <Box display="block">
+            <Box display="block" mt={'160px'}>
                 <Outlet />
             </Box>
             <Footer />

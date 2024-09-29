@@ -16,8 +16,7 @@ const StyledImage = styled('img')({
 });
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: 'transparent',
-  boxShadow: 'none',
+  backgroundColor: 'white',
   padding: '1.5rem 0',
 });
 
@@ -49,7 +48,7 @@ const Header: React.FC = () => {
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
 
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position="fixed">
       <StyledToolbar>
         <NavLink to='/' style={{ textDecoration: 'none' }}>
           <Stack direction={'row'} spacing={2} justifyContent={'center'} alignItems={'center'}>

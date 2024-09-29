@@ -56,7 +56,7 @@ export default function BookingPage() {
     }));
 
     return (
-        <Box mt={10} ml={10} mb={10} pb={10}>
+        <Box pb={10}>
             <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                 <Typography variant="h4">Booking History</Typography>
             </Stack>

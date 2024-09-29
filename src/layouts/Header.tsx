@@ -1,15 +1,14 @@
 
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge, IconButton, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import { styled, useTheme } from '@mui/material/styles';
-import AccountPopover from './AccountPopover';
-import { NAV } from './config-layout';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Badge, IconButton, Typography } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useAppSelector } from '../app/hook';
+import AccountPopover from './AccountPopover';
 
 const StyledImage = styled('img')({
     width: 40,
@@ -50,15 +49,14 @@ export default function Header() {
 
     return (
         <AppBar
+            position="fixed"
             sx={{
                 zIndex: theme.zIndex.appBar + 1,
                 transition: theme.transitions.create(['height'], {
                     duration: theme.transitions.duration.shorter
                 }),
-                width: `calc(100% - ${NAV.WIDTH + 1}px)`,
                 height: 80,
-                backgroundColor: 'transparent',
-                boxShadow: 'none',
+                backgroundColor: 'white',
             }}
         >
             <Toolbar

@@ -55,8 +55,8 @@ export default function UserProfile() {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Container maxWidth="sm" sx={{ mt: 20 }}>
-                <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
+            <Container maxWidth="sm">
+                <Paper elevation={3} sx={{ p: 4 }}>
                     <Typography variant="h4" gutterBottom pb={4}>
                         User Profile
                     </Typography>

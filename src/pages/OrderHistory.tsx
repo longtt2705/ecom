@@ -51,7 +51,7 @@ export default function OrderPage() {
     });
 
     return (
-        <Box mt={10} ml={15}>
+        <Box>
             <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                 <Typography variant="h4">Orders</Typography>
             </Stack>
