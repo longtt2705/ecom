@@ -52,7 +52,7 @@ const Services = () => {
                 <Grid2 container>
                     <Grid2 size={6}>
                         <Typography variant="h2" fontWeight={"bold"} sx={{ my: 2 }}>We offer a wide range of services to cater to your dental needs.</Typography>
-                        <Typography variant="body1" color="gray" fontSize={'1.4rem'} sx={{ my: 2 }}>
+                        <Typography variant="body1" color="gray" fontSize={'1.3rem'} sx={{ my: 2 }}>
                             At our dental clinic, we are committed to delivering exceptional, personalized care with a focus on your comfort and well-being. We promise to provide top-quality services at preferential prices, ensuring that you receive the best treatment without compromising on affordability.
                         </Typography>
                         <Typography variant="h4" color="primary" textTransform='uppercase' fontWeight={"bold"} sx={{ mt: 6 }} onClick={() => navigate('/appointment')}>
