@@ -82,11 +82,11 @@ export default function Footer() {
                             Quick Links
                         </Typography>
                         <Box display="flex" flexDirection="column">
-                            <QuickLink href="#">About Us</QuickLink>
-                            <QuickLink href="#">Dental Services</QuickLink>
-                            <QuickLink href="#">Dentist</QuickLink>
-                            <QuickLink href="#">Blogs</QuickLink>
-                            <QuickLink href="#">FAQs</QuickLink>
+                            <QuickLink href="/">Home</QuickLink>
+                            <QuickLink href="/#products">Products</QuickLink>
+                            <QuickLink href="/#services">Services</QuickLink>
+                            <QuickLink href="/#testimonial">Testimonial</QuickLink>
+                            <QuickLink href="/#about-us">About Us</QuickLink>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={4}>
