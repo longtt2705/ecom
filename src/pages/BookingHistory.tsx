@@ -12,6 +12,7 @@ import { appointmentService } from '../services';
 import professionals from '../shared/professionals';
 import services from '../shared/services';
 import { timeShifts } from '../shared/appointment';
+import { get } from 'lodash-es';
 
 function emptyRows(page: number, rowsPerPage: number, arrayLength: number) {
     return page ? Math.max(0, (1 + page) * rowsPerPage - arrayLength) : 0;
@@ -83,8 +84,8 @@ export default function BookingPage() {
                                             headCell.label && (
                                                 <TableCell key={headCell.id} align="left">
                                                     {headCell.type === 'date'
-                                                        ? dayjs(row[headCell.id]).format('DD/MM/YYYY HH:mm')
-                                                        : row[headCell.id]}{' '}
+                                                        ? dayjs(get(row, headCell.id, dayjs())).format('DD/MM/YYYY HH:mm')
+                                                        : get(row, headCell.id, '')}
                                                 </TableCell>
                                             )
                                     )}

@@ -232,7 +232,7 @@ const CheckoutPage = () => {
                                     variant="contained"
                                     fullWidth
                                     sx={{ mt: 2 }}
-                                    onClick={handleSubmit}
+                                    onClick={() => handleSubmit()}
                                 >
                                     Pay ${totalAmount + 5}
                                 </Button>

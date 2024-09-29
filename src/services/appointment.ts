@@ -29,5 +29,12 @@ export const getAppointments = async (email: string) => {
         orderBy('dateOfAppointment', 'desc')
     );
     const data = await getDocs(q);
-    return data.docs.map((document) => ({ id: document.id, ...document.data() }));
+    return data.docs.map((document) => ({
+        ...(document.data() as {
+            dateOfAppointment: string,
+            doctorId: number,
+            services: string[],
+            timeShift: string,
+        })
+    }));
 }

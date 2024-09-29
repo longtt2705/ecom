@@ -170,7 +170,6 @@ export default function Appointment() {
                                                 textField: {
                                                     variant: "outlined",
                                                     error: touched.dateOfBirth && Boolean(errors.dateOfBirth),
-                                                    helperText: touched.dateOfBirth && errors.dateOfBirth,
                                                     sx: { width: '100%' }
                                                 }
                                             }}
@@ -219,7 +218,6 @@ export default function Appointment() {
                                                 textField: {
                                                     variant: "outlined",
                                                     error: touched.dateOfAppointment && Boolean(errors.dateOfAppointment),
-                                                    helperText: touched.dateOfAppointment && errors.dateOfAppointment,
                                                     sx: { width: '100%' }
                                                 }
                                             }}
@@ -260,10 +258,10 @@ export default function Appointment() {
                             </Grid>
                             <Box sx={{ mt: 3, display: 'flex', justifyContent: 'flex-end' }}>
                                 <Button
-                                    type="submit"
+                                    type='submit'
                                     variant="contained"
                                     color="primary"
-                                    onClick={handleSubmit}
+                                    onClick={() => handleSubmit()}
                                 >
                                     Book Appointment
                                 </Button>

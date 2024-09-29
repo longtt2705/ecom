@@ -7,12 +7,10 @@ import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import Typography from '@mui/material/Typography';
-
-
-
 import dayjs from 'dayjs';
 import { useAppSelector } from '../app/hook';
 import { getOrders } from '../services/products';
+import { get } from 'lodash-es';
 
 function emptyRows(page: number, rowsPerPage: number, arrayLength: number) {
     return page ? Math.max(0, (1 + page) * rowsPerPage - arrayLength) : 0;
@@ -81,8 +79,8 @@ export default function OrderPage() {
                                             headCell.label && (
                                                 <TableCell key={headCell.id} align="left">
                                                     {headCell.type === 'date'
-                                                        ? dayjs(row[headCell.id]).format('DD/MM/YYYY HH:mm')
-                                                        : row[headCell.id]}{' '}
+                                                        ? dayjs(get(row, headCell.id, dayjs())).format('DD/MM/YYYY HH:mm')
+                                                        : get(row, headCell.id, '')}
                                                 </TableCell>
                                             )
                                     )}

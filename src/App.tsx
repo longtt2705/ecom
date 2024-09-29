@@ -1,6 +1,6 @@
 import { Backdrop, CircularProgress, CssBaseline } from '@mui/material';
 import { useEffect } from 'react';
-import { useNavigate, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import firebase from './app/firebase';
 import { useAppDispatch, useAppSelector } from './app/hook';
 import ConsecutiveSnackbars from './components/ConsecutiveSnackbars';

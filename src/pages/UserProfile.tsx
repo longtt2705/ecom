@@ -69,7 +69,7 @@ export default function UserProfile() {
                                         label="First Name"
                                         {...getFieldProps('firstName')}
                                         error={touched.firstName && Boolean(errors.firstName)}
-                                        helperText={touched.firstName && errors.firstName}
+                                        helperText={touched.firstName && typeof errors.firstName === 'string' ? errors.firstName : undefined}
                                         required
                                     />
                                 </Grid>
@@ -79,7 +79,7 @@ export default function UserProfile() {
                                         label="Last Name"
                                         {...getFieldProps('lastName')}
                                         error={touched.lastName && Boolean(errors.lastName)}
-                                        helperText={touched.lastName && errors.lastName}
+                                        helperText={touched.lastName && typeof errors.lastName === 'string' ? errors.lastName : undefined}
                                         required
                                     />
                                 </Grid>
@@ -89,7 +89,7 @@ export default function UserProfile() {
                                         label="Phone"
                                         {...getFieldProps('phone')}
                                         error={touched.phone && Boolean(errors.phone)}
-                                        helperText={touched.phone && errors.phone}
+                                        helperText={touched.phone && typeof errors.phone === 'string' ? errors.phone : undefined}
                                         required
                                     />
                                 </Grid>
@@ -113,7 +113,7 @@ export default function UserProfile() {
                                             textField: {
                                                 variant: "outlined",
                                                 error: touched.dateOfBirth && Boolean(errors.dateOfBirth),
-                                                helperText: touched.dateOfBirth && errors.dateOfBirth,
+                                                helperText: touched.dateOfBirth && typeof errors.dateOfBirth === 'string' ? errors.dateOfBirth : undefined,
                                                 sx: { width: '100%' }
                                             }
                                         }}
@@ -125,7 +125,7 @@ export default function UserProfile() {
                                         label="Address"
                                         {...getFieldProps('address')}
                                         error={touched.address && Boolean(errors.address)}
-                                        helperText={touched.address && errors.address}
+                                        helperText={touched.address && typeof errors.address === 'string' ? errors.address : undefined}
                                         multiline
                                         rows={2}
                                         required
@@ -137,7 +137,7 @@ export default function UserProfile() {
                                     type="submit"
                                     variant="contained"
                                     color="primary"
-                                    onClick={handleSubmit}
+                                    onClick={() => handleSubmit()}
                                 >
                                     Update Profile
                                 </Button>
