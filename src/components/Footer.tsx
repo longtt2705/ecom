@@ -25,8 +25,8 @@ const SocialIcon = styled(IconButton)(({
     },
 }));
 
-const QuickLink = styled(Link)(({ theme }) => ({
-    color: theme.palette.text.secondary,
+const QuickLink = styled(Link)(({
+    color: 'whitesmoke',
     textDecoration: 'none',
     '&:hover': {
         textDecoration: 'underline',
@@ -59,7 +59,7 @@ export default function Footer() {
                         <Logo variant="h6">
                             🦷 Molarrific
                         </Logo>
-                        <Typography variant="body2" sx={{ mb: 2 }} color='text.secondary'>
+                        <Typography variant="body2" sx={{ mb: 2 }} color='whitesmoke'>
                             At our clinic, we prioritize exceptional dental care by combining the latest treatments with a highly experienced team, ensuring your comfort and oral health are in the best hands. With modern equipment and comprehensive services, we help keep your smile bright and healthy.
                         </Typography>
                         <Typography variant="body2" fontWeight={"bold"} sx={{ mb: 1 }} color="#fff">
@@ -98,7 +98,7 @@ export default function Footer() {
                                 <PhoneIcon color="primary" />
                             </ContactIcon>
                             <Box>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography variant="body2" color="whitesmoke">
                                     Phone Number
                                 </Typography>
                                 <Typography variant="body1">+84 969 696 969</Typography>
@@ -109,7 +109,7 @@ export default function Footer() {
                                 <AccessTimeIcon color="primary" />
                             </ContactIcon>
                             <Box>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography variant="body2" color="whitesmoke">
                                     Open Hour
                                 </Typography>
                                 <Typography variant="body1">09:00 AM - 18:00 PM</Typography>
@@ -120,7 +120,7 @@ export default function Footer() {
                                 <LocationOnIcon color="primary" />
                             </ContactIcon>
                             <Box>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography variant="body2" color="whitesmoke">
                                     Clinic Address
                                 </Typography>
                                 <Typography variant="body1">279 Nguyen Tri Phuong, Ward 5, District 10</Typography>

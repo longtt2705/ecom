@@ -56,7 +56,7 @@ export default function DentalistHero() {
                             At our clinic, we prioritize exceptional dental care by combining the latest treatments with a highly experienced team, ensuring your comfort and oral health are in the best hands. With modern equipment and comprehensive services, we help keep your smile bright and healthy.
                         </Typography>
                         <Box display="flex" alignItems="center" mt={10} gap={3}>
-                            <BookButton variant="contained" sx={{ mr: 2 }} onClick={() => navigate('/appointment')}>
+                            <BookButton variant="contained" sx={{ mr: 2 }} onClick={() => navigate('/dashboard/appointment')}>
                                 Book an appointment
                             </BookButton>
                             <Box>

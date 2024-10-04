@@ -2,6 +2,8 @@
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import DomainAddIcon from '@mui/icons-material/DomainAdd';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import FeedbackIcon from '@mui/icons-material/Feedback';
 
 const navConfig = [
   {
@@ -19,6 +21,16 @@ const navConfig = [
     path: '/dashboard/orders-history',
     icon: <ShoppingBagIcon />
   },
+  {
+    title: 'Appointment',
+    path: '/dashboard/appointment',
+    icon: <LocalHospitalIcon />
+  },
+  {
+    title: 'Feedback',
+    path: '/dashboard/feedback',
+    icon: <FeedbackIcon />
+  }
 ];
 
 export default navConfig;

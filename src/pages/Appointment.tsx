@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Container, FormControl, FormControlLabel, Grid2 as Grid, InputLabel, MenuItem, Paper, Select, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Checkbox, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormGroup, Grid2 as Grid, InputLabel, MenuItem, Paper, Select, Stack, Switch, TextField, Typography } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -29,10 +29,19 @@ export default function Appointment() {
     const user = useAppSelector((store) => store.user.user);
     const userData = useAppSelector((store) => store.user.userMetaData);
     const [doctorTimeShift, setDoctorTimeShift] = useState<string[]>([]);
+    const [isBookForOtherPerson, setIsBookForOtherPerson] = useState(false);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const availableTimeShifts = timeShifts.filter((_, index) => !doctorTimeShift.includes(index.toString()));
+    const [open, setOpen] = useState(false);
 
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     // Formik configuration
     const formik = useFormik({
@@ -51,34 +60,22 @@ export default function Appointment() {
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             // Here you would typically send the updated profile to your backend
-            try {
-                // Store additional user data
-                if (typeof values.timeShift === 'undefined') {
-                    dispatch(createAlert({ id: Date.now(), message: 'Please choose a time', severity: 'error' }));
-                    return;
-                }
-
-                if (values.services.length === 0) {
-                    dispatch(createAlert({ id: Date.now(), message: 'Please choose at least one service', severity: 'error' }));
-                    return;
-                }
-
-                await Promise.all([
-                    appointmentService.addDoctorTimeShift(values.doctorId, values.dateOfAppointment.format('YYYY-MM-DD'), values.timeShift),
-                    appointmentService.storeAppointment(user.email, {
-                        ...values,
-                        dateOfBirth: values.dateOfBirth.toISOString(),
-                        dateOfAppointment: values.dateOfAppointment.toISOString(),
-                    })
-                ]);
-                dispatch(createAlert({ id: Date.now(), message: 'Book appointment successfully!', severity: 'success' }));
-                navigate('/')
-            } catch (error) {
-                console.error(error);
-                dispatch(createAlert({ id: Date.now(), message: 'Failed to book appointment', severity: 'error' }));
+            // Store additional user data
+            if (typeof values.timeShift === 'undefined') {
+                dispatch(createAlert({ id: Date.now(), message: 'Please choose a time', severity: 'error' }));
+                return;
             }
+
+            if (values.services.length === 0) {
+                dispatch(createAlert({ id: Date.now(), message: 'Please choose at least one service', severity: 'error' }));
+                return;
+            }
+
+            handleOpen();
         },
     });
+
+
 
     useEffect(() => {
         const fetchDoctorTimeShift = async () => {
@@ -91,6 +88,12 @@ export default function Appointment() {
 
         fetchDoctorTimeShift();
     }, [formik.values.doctorId, formik.values.dateOfAppointment]);
+
+    useEffect(() => {
+        if (!isBookForOtherPerson) {
+            handleAutoFill();
+        }
+    }, [isBookForOtherPerson]);
 
 
     const { errors, touched, handleSubmit, getFieldProps, values, setFieldValue } = formik;
@@ -107,10 +110,28 @@ export default function Appointment() {
         });
     }
 
+    const handleSendData = async () => {
+        try {
+
+            await Promise.all([
+                appointmentService.addDoctorTimeShift(values.doctorId, values.dateOfAppointment.format('YYYY-MM-DD'), values.timeShift!),
+                appointmentService.storeAppointment(user.email, {
+                    ...values,
+                    dateOfBirth: values.dateOfBirth.toISOString(),
+                    dateOfAppointment: values.dateOfAppointment.toISOString(),
+                })
+            ]);
+            dispatch(createAlert({ id: Date.now(), message: 'Book appointment successfully!', severity: 'success' }));
+            navigate('/')
+        } catch (error) {
+            console.error(error);
+            dispatch(createAlert({ id: Date.now(), message: 'Failed to book appointment', severity: 'error' }));
+        }
+    }
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Container maxWidth="lg" sx={{ my: 20 }}>
+            <Container maxWidth="lg" sx={{ my: 10 }}>
                 <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
                     <Typography variant="h4" gutterBottom pb={4}>
                         Appointment
@@ -127,6 +148,7 @@ export default function Appointment() {
                                             error={touched.firstName && Boolean(errors.firstName)}
                                             helperText={touched.firstName && errors.firstName}
                                             required
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
                                     <Grid size={12}>
@@ -137,6 +159,7 @@ export default function Appointment() {
                                             error={touched.lastName && Boolean(errors.lastName)}
                                             helperText={touched.lastName && errors.lastName}
                                             required
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
                                     <Grid size={12}>
@@ -147,6 +170,7 @@ export default function Appointment() {
                                             error={touched.phone && Boolean(errors.phone)}
                                             helperText={touched.phone && errors.phone}
                                             required
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
                                     <Grid size={12}>
@@ -157,6 +181,7 @@ export default function Appointment() {
                                             error={touched.email && Boolean(errors.email)}
                                             helperText={touched.email && errors.email}
                                             required
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
                                     <Grid size={12}>
@@ -173,6 +198,7 @@ export default function Appointment() {
                                                     sx: { width: '100%' }
                                                 }
                                             }}
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
                                     <Grid size={12}>
@@ -185,11 +211,15 @@ export default function Appointment() {
                                             multiline
                                             rows={2}
                                             required
+                                            disabled={!isBookForOtherPerson}
                                         />
                                     </Grid>
-                                    <Button color="primary" onClick={handleAutoFill}>
-                                        Auto fill my information
-                                    </Button>
+                                    <FormGroup>
+                                        <FormControlLabel control={<Switch
+                                            checked={isBookForOtherPerson}
+                                            onChange={() => setIsBookForOtherPerson(!isBookForOtherPerson)}
+                                        />} label="Book for other person" />
+                                    </FormGroup>
                                 </Grid>
                                 <Grid container size={6}>
                                     <Stack width={"100%"} spacing={3}>
@@ -206,6 +236,7 @@ export default function Appointment() {
                                                     </MenuItem>
                                                 ))}
                                             </Select>
+                                            <span style={{ padding: '2px', paddingLeft: '5px' }}><a href="/#professionals" target='_blank'>Click here to see our information</a></span>
                                         </FormControl>
                                         <DatePicker
                                             disablePast
@@ -258,7 +289,6 @@ export default function Appointment() {
                             </Grid>
                             <Box sx={{ mt: 3, display: 'flex', justifyContent: 'flex-end' }}>
                                 <Button
-                                    type='submit'
                                     variant="contained"
                                     color="primary"
                                     onClick={() => handleSubmit()}
@@ -266,6 +296,27 @@ export default function Appointment() {
                                     Book Appointment
                                 </Button>
                             </Box>
+                            <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">
+                                    Confirm Appointment
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description" color='gray'>
+                                        Are you sure you want to book an appointment? Please check your information carefully before confirming.
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button variant='outlined' color='error' onClick={handleClose}>Cancel</Button>
+                                    <Button type='submit' variant='contained' onClick={() => handleSendData()} autoFocus>
+                                        Confirm
+                                    </Button>
+                                </DialogActions>
+                            </Dialog>
                         </Form>
                     </FormikProvider>
                 </Paper>

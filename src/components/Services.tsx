@@ -55,10 +55,10 @@ const Services = () => {
                         <Typography variant="body1" color="gray" fontSize={'1.3rem'} sx={{ my: 2 }}>
                             At our dental clinic, we are committed to delivering exceptional, personalized care with a focus on your comfort and well-being. We promise to provide top-quality services at preferential prices, ensuring that you receive the best treatment without compromising on affordability.
                         </Typography>
-                        <Typography variant="h4" color="primary" textTransform='uppercase' fontWeight={"bold"} sx={{ mt: 6 }} onClick={() => navigate('/appointment')}>
+                        <Typography variant="h4" color="primary" textTransform='uppercase' fontWeight={"bold"} sx={{ mt: 6 }} onClick={() => navigate('/dashboard/appointment')}>
                             Book an appointment now
                         </Typography>
-                        <Button variant="contained" color="primary" size="large" sx={{ mt: 2, padding: '20px 40px', borderRadius: '40px', fontWeight: 'bold', fontSize: '1.3rem' }} onClick={() => navigate('/appointment')}>
+                        <Button variant="contained" color="primary" size="large" sx={{ mt: 2, padding: '20px 40px', borderRadius: '40px', fontWeight: 'bold', fontSize: '1.3rem' }} onClick={() => navigate('/dashboard//appointment')}>
                             Book Appointment
                         </Button>
                     </Grid2>

@@ -61,6 +61,10 @@ const BookingHistory = Loader(
   lazy(() => import('./pages/BookingHistory'))
 );
 
+const Feedback = Loader(
+  lazy(() => import('./pages/Feedback'))
+);
+
 const routes = (isAuth: boolean): RouteObject[] => {
   return [
     {
@@ -105,10 +109,6 @@ const routes = (isAuth: boolean): RouteObject[] => {
           element: <Checkout />
         },
         {
-          path: 'appointment',
-          element: <Appointment />
-        },
-        {
           path: '*',
           element: <Status404 />
         }
@@ -127,6 +127,10 @@ const routes = (isAuth: boolean): RouteObject[] => {
           element: <Navigate to="details" replace />
         },
         {
+          path: 'appointment',
+          element: <Appointment />
+        },
+        {
           path: 'details',
           element: <UserProfile />
         },
@@ -137,6 +141,10 @@ const routes = (isAuth: boolean): RouteObject[] => {
         {
           path: 'orders-history',
           element: <OrdersHistory />
+        },
+        {
+          path: 'feedback',
+          element: <Feedback />
         }
       ]
     }

@@ -40,29 +40,30 @@ const StyledImage = styled('img')({
 const Professionals = () => {
 
     return (
-        <Container maxWidth="lg" sx={{ my: 10 }}>
-            <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"}>
-                Qualified Healthcare
-                Professionals
-            </Typography>
-            <Carousel responsive={responsive}>
-                {
-                    items.map((item, index) => (
-                        <StyledGrid key={index} container spacing={2}>
-                            <Grid2 size={7}>
-                                <StyledImage src={item.image} alt={item.name} />
-                            </Grid2>
-                            <Grid2 size={5} spacing={2}>
-                                <Typography variant="h5" fontWeight={"bold"} sx={{ my: 2 }}>Dr. {item.name}</Typography>
-                                <Typography variant="body2" fontWeight={"bold"} color="primary" sx={{ my: 1 }}>{item.specialty}</Typography>
-                                <Typography variant="body1" color="gray" sx={{
-                                }}>{item.description}</Typography>
-                            </Grid2>
-                        </StyledGrid>
-                    ))
-                }
-            </Carousel>
-        </Container>
+        <div id={'professionals'}>
+            <Container maxWidth="lg" sx={{ my: 10 }}>
+                <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"}>
+                    Qualified Healthcare Professionals
+                </Typography>
+                <Carousel responsive={responsive}>
+                    {
+                        items.map((item, index) => (
+                            <StyledGrid key={index} container spacing={2}>
+                                <Grid2 size={7}>
+                                    <StyledImage src={item.image} alt={item.name} />
+                                </Grid2>
+                                <Grid2 size={5} spacing={2}>
+                                    <Typography variant="h5" fontWeight={"bold"} sx={{ my: 2 }}>Dr. {item.name}</Typography>
+                                    <Typography variant="body2" fontWeight={"bold"} color="primary" sx={{ my: 1 }}>{item.specialty}</Typography>
+                                    <Typography variant="body1" color="gray" sx={{
+                                    }}>{item.description}</Typography>
+                                </Grid2>
+                            </StyledGrid>
+                        ))
+                    }
+                </Carousel>
+            </Container>
+        </div>
     );
 }
 
