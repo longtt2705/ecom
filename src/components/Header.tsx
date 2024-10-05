@@ -38,7 +38,7 @@ const BookButton = styled(Button)({
   fontWeight: 'bold',
   fontSize: '1rem',
   padding: '1rem 1.5rem',
-  borderRadius: '50px',
+  borderRadius: '20px',
   boxShadow: 'none'
 });
 
@@ -63,7 +63,6 @@ const Header: React.FC = () => {
           <StyledButton href='/#products'>Products</StyledButton>
           <StyledButton href='/#services'>Services</StyledButton>
           <StyledButton href='/#testimonial'>Testimonial</StyledButton>
-          <StyledButton href='/#about-us'>About Us</StyledButton>
         </Stack>
         <Stack direction={"row"} spacing={2}>
           <IconButton onClick={() => navigate('/cart')}>
@@ -74,6 +73,9 @@ const Header: React.FC = () => {
               }} />
             </Badge>
           </IconButton>
+          <BookButton color="primary" variant='contained' onClick={
+            () => navigate('/dashboard/appointment')
+          }>Book Appointment</BookButton>
           <BookButton color="primary" variant='contained' onClick={
             () => user ? navigate('dashboard') : navigate('/login')
           }>{user ? 'Go to Dashboard' : 'Login Now'}</BookButton>
