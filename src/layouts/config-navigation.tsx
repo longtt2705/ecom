@@ -22,7 +22,7 @@ const navConfig = [
     icon: <ShoppingBagIcon />
   },
   {
-    title: 'Appointment',
+    title: 'Đặt dịch vụ',
     path: '/dashboard/appointment',
     icon: <LocalHospitalIcon />
   },

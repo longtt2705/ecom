@@ -9,45 +9,31 @@ export type Product = {
 const items: Product[] = [
         {
             id: 1,
-            image: '/images/hoha.png',
-            title: 'H.O.H.A',
-            description: 'A disposable dental diagnostics product with sensors to collect data including tooth shade, surface conditions, and signs of enamel erosion or sensitivity.',
+            image: '/images/glass.jpeg',
+            title: 'Ly Thủy Tinh',
+            description: 'Ly thủy tinh được làm từ vật liệu tái chế với độ bền cao, thiết kế đẹp và phù hợp cho sử dụng cá nhân hàng ngày, góp phần giảm thiểu sử dụng sản phẩm nhựa.',
             price: 99.99
         },
         {
             id: 2,
-            image: '/images/kit.png',
-            title: 'Teeth Whitening Kit',
-            description: 'Brighten your smile with our Teeth Whitening Kit. Designed to safely and effectively whiten your teeth, this kit removes stains and restores the natural brightness of your teeth, giving you a radiant smile.',
+            image: '/images/bag.jpeg',
+            title: 'Túi Đan',
+            description: 'Túi đan thủ công bền vững, là giải pháp thay thế tuyệt vời cho túi ni lông khi đi chợ hoặc mua sắm, giúp giảm thiểu rác thải nhựa.',
             price: 29.99
         },
         {
             id: 3,
-            image: '/images/floss.png',
-            title: 'Dental Floss',
-            description: 'Keep your teeth clean and your gums healthy with our Dental Floss. It reaches deep between teeth and below the gumline to remove plaque and food particles, promoting better oral hygiene.',
+            image: '/images/green_gift.jpeg',
+            title: 'Chuông gió màu sắc',
+            description: 'Chuông gió được làm thủ công từ chai nhựa tái chế, không chỉ mang lại âm thanh thư giãn mà còn tạo điểm nhấn độc đáo cho không gian sống',
             price: 2.99
         },
         {
             id: 4,
-            image: '/images/toothbrush.png',
-            title: 'Electric Toothbrush',
-            description: 'This high-powered toothbrush offers deep cleaning for hard-to-reach areas, ensuring a superior clean and helping maintain bright, healthy teeth.',
-            price: 34.99
-        },
-        {
-            id: 5,
-            image: '/images/strip.png',
-            title: 'Whitening Strips',
-            description: 'Easy-to-use strips that gently whiten teeth over time, perfect for customers looking for a simple, at-home solution to brighten their smiles.',
-            price: 19.99
-        },
-        {
-            id: 6,
-            image: '/images/stray.png',
-            title: 'Custom Whitening Trays',
-            description: 'Professional-grade whitening trays molded to fit your teeth perfectly, offering a more even and effective whitening experience.',
-            price: 49.99
+            image: '/images/bottle.jpeg',
+            title: 'Bình Nước Cá Nhân',
+            description: 'Bình nước cá nhân nhẹ, bền, được sản xuất từ nhựa tái chế, là lựa chọn hoàn hảo để thay thế các chai nhựa dùng một lần, thích hợp mang theo khi đi học, làm việc hay du lịch.',
+            price: 2.99
         },
     ]
 

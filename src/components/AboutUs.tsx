@@ -21,7 +21,7 @@ const AboutUsSection = () => {
                             <Box sx={{ position: 'relative', height: '400px' }}>
                                 <Box
                                     component="img"
-                                    src="/images/dentist-bg.webp?height=400&width=500"
+                                    src="/images/18.png?height=400&width=500"
                                     alt="Dental team"
                                     sx={{
                                         width: '100%',
@@ -32,7 +32,7 @@ const AboutUsSection = () => {
                                 />
                                 <Box
                                     component="img"
-                                    src="/images/dentist-bg-mini.jpg?height=200&width=200"
+                                    src="/images/17.png?height=200&width=200"
                                     alt="Dentist portrait"
                                     sx={{
                                         position: 'absolute',
@@ -49,21 +49,17 @@ const AboutUsSection = () => {
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                                Why You Should Trust Us? Get Know About Us!
+                            <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }} textTransform={'uppercase'}>
+                                Về Unistars
                             </Typography>
-                            <Typography variant="body1" paragraph sx={{ color: 'gray' }}>
-                                Our clinic is committed to providing exceptional dental care. We believe
-                                that every patient deserves to feel comfortable, confident, and cared
-                                for. With years of experience and a team of highly trained
-                                professionals, we ensure that your oral health is in the best hands.
+                            <Typography variant="body1" paragraph sx={{ color: 'gray' }} fontSize={'1.1rem'} textAlign={'justify'}>
+                                UNISTARS là dự án khởi nghiệp bền vững với mục tiêu xây dựng một hệ sinh thái kinh tế tuần hoàn từ việc thu gom, tái chế rác thải tại các trường đại học và cộng đồng, tích hợp nền tảng thương mại điện tử và mạng xã hội xanh
                             </Typography>
-                            <Typography variant="body1" paragraph sx={{ color: 'gray' }}>
-                                We focus on the latest advancements in dental treatments and patient
-                                care, ensuring that your smile remains bright and healthy.
+                            <Typography variant="body1" paragraph sx={{ color: 'gray' }} fontSize={'1.1rem'} textAlign={'justify'}>
+                                Chúng tôi mong muốn tạo ra một môi trường sạch hơn, bền vững hơn thông qua các sản phẩm tái chế chất lượng và dịch vụ thu gom rác thải thông minh, đồng thời nâng cao nhận thức bảo vệ môi trường
                             </Typography>
                             <List>
-                                {['Comprehensive Dental Services', 'Highly Qualified and Experienced Dentists', 'Modern Equipment and Techniques'].map((item, index) => (
+                                {['Bảo vệ môi trường', 'Phát triển bền vững', 'Xây dựng cộng đồng xanh'].map((item, index) => (
                                     <ListItem key={index} disableGutters>
                                         <ListItemIcon>
                                             <CheckCircleOutlineIcon color="primary" />

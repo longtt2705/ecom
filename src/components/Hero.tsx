@@ -1,79 +1,58 @@
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {
     Box,
-    Button,
     Container,
     Grid,
+    Stack,
     styled,
     Typography
 } from '@mui/material';
-import { useNavigate } from 'react-router';
 
-
-const BookButton = styled(Button)({
-    borderRadius: '50px',
-    padding: '20px 30px',
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
-});
 
 const HeroContainer = styled(Box)({
-    backgroundColor: '#dbeefa',
+    background: 'url(/images/banner.png) no-repeat center center',
     borderRadius: '40px',
     position: 'relative',
+    minHeight: '800px',
     overflow: 'hidden',
     paddingLeft: '100px',
     paddingRight: '100px',
     paddingTop: '100px',
 });
 
-const FloatingIcon = styled(Box)(({ theme }) => ({
-    position: 'absolute',
-    width: '60px',
-    height: '60px',
-    backgroundColor: theme.palette.primary.main,
-    borderRadius: '15px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'white',
-    fontSize: '24px',
-    top: '20%',
-    right: '35%',
-    transform: 'rotate(10deg)',
-}));
+
 
 export default function DentalistHero() {
-    const navigate = useNavigate();
     return (
         <Container maxWidth='xl'>
             <HeroContainer mt={4}>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={7}>
-                        <Typography variant="h2" component="h1" color='primary' gutterBottom sx={{ fontWeight: 'bold', fontSize: '4.5rem' }}>
-                            Your Smile Deserves Our Highest Attention
+                        <Typography variant="h2" component="h1" color='white' gutterBottom sx={{ fontWeight: 'bold', fontSize: '4.5rem', textTransform: 'uppercase' }}>
+                            Unistars
                         </Typography>
-                        <Typography variant="body1" sx={{ color: '#6E7191' }} fontSize={'1.2rem'}>
-                            At our clinic, we prioritize exceptional dental care by combining the latest treatments with a highly experienced team, ensuring your comfort and oral health are in the best hands. With modern equipment and comprehensive services, we help keep your smile bright and healthy.
+                        <Typography variant="h2" color='white' textTransform={"uppercase"} fontWeight={'bolder'}>
+                            eco-friendly
                         </Typography>
-                        <Box display="flex" alignItems="center" mt={10} gap={3}>
-                            <BookButton variant="contained" sx={{ mr: 2 }} onClick={() => navigate('/dashboard/appointment')}>
-                                Book an appointment
-                            </BookButton>
-                            <Box>
-                                <Typography variant="subtitle2" sx={{ color: '#1F2B6C' }}>
-                                    DENTAL 24H EMERGENCY
-                                </Typography>
-                                <Typography variant="h6" sx={{ color: '#159EEC' }}>
-                                    +84 969 696 969
-                                </Typography>
-                            </Box>
+                        <Typography variant="h6" color='secondary' sx={{ mt: 2, ml: 0. }} fontStyle={'italic'} width={525} textAlign={'justify'}>
+                            UNISTARS là nền tảng thương mại điện tử và dịch vụ thu gom rác thải tái chế thân thiện với môi trường, mang đến các sản phẩm bền vững và tạo cơ hội việc làm cho cộng đồng
+                        </Typography>
+
+                        <Typography variant="h6" color='secondary' sx={{ mt: 2, ml: 0. }} fontStyle={'italic'} width={525}>
+                            Hướng đến một cộng đồng xanh, bảo vệ môi trường từ những hành động nhỏ nhất
+                        </Typography>
+                        <Box display="flex" alignItems="center" mt={5} gap={3}>
+                            <Stack spacing={2}>
+                                {['Bảo vệ môi trường', 'Phát triển bền vững', 'Xây dựng cộng đồng xanh'].map((item, index) => (
+                                    <Stack key={index} direction={'row'} alignItems={'center'} spacing={2}>
+                                        <CheckCircleOutlineIcon color="primary" />
+                                        <Typography variant='h6' color='white'>{item}</Typography>
+                                    </Stack>
+                                ))}
+                            </Stack>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
-                        <img src="/images/smiling_woman.png" alt="Smiling woman" style={{ width: '95%', height: 'auto' }} />
-                    </Grid>
                 </Grid>
-                <FloatingIcon>🦷</FloatingIcon>
             </HeroContainer>
         </Container>
     );

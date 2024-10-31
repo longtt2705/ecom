@@ -1,4 +1,4 @@
-import { Container, Grid2, styled, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Container, Typography } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import items from "../shared/professionals";
@@ -23,42 +23,38 @@ const responsive = {
     }
 }
 
-const StyledGrid = styled(Grid2)({
-    backgroundColor: '#fff',
-    borderRadius: '40px',
-    padding: '15px',
-    margin: '20px',
-    boxShadow: '0 0 10px 2px rgba(0,0,0,0.1)',
-});
-
-const StyledImage = styled('img')({
-    width: '250px',
-    height: '380px',
-    borderRadius: '40px',
-});
-
 const Professionals = () => {
 
     return (
         <div id={'professionals'}>
             <Container maxWidth="lg" sx={{ my: 10 }}>
-                <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"}>
-                    Qualified Healthcare Professionals
+                <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"} textTransform={'capitalize'}>
+                    Đối tác của chúng tôi
                 </Typography>
                 <Carousel responsive={responsive}>
                     {
                         items.map((item, index) => (
-                            <StyledGrid key={index} container spacing={2}>
-                                <Grid2 size={7}>
-                                    <StyledImage src={item.image} alt={item.name} />
-                                </Grid2>
-                                <Grid2 size={5} spacing={2}>
-                                    <Typography variant="h5" fontWeight={"bold"} sx={{ my: 2 }}>Dr. {item.name}</Typography>
-                                    <Typography variant="body2" fontWeight={"bold"} color="primary" sx={{ my: 1 }}>{item.specialty}</Typography>
-                                    <Typography variant="body1" color="gray" sx={{
-                                    }}>{item.description}</Typography>
-                                </Grid2>
-                            </StyledGrid>
+                            <Card key={index} sx={{
+                                borderRadius: '16px',
+                                mx: 2,
+                                height: 450,
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}>
+                                <CardMedia
+                                    sx={{ height: 300 }}
+                                    image={item.image}
+                                    title={item.name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {item.name}
+                                    </Typography>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                        {item.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+
                         ))
                     }
                 </Carousel>

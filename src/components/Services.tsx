@@ -30,7 +30,7 @@ const StyledStack = styled(Stack)({
     padding: '15px',
     margin: '20px',
     boxShadow: '0 0 10px 2px rgba(0,0,0,0.1)',
-    height: 600
+    height: 525
 });
 
 const StyledImage = styled('img')({
@@ -46,20 +46,19 @@ const Services = () => {
     return (
         <div id={'services'}>
             <Container maxWidth="xl" sx={{ my: 10 }}>
-                <Typography variant="h2" gutterBottom color="primary" fontWeight={"bolder"}>
-                    Our Services Offered
+                <Typography variant="h2" gutterBottom color="primary" fontWeight={"bolder"} textTransform={'uppercase'}>
+                    Dịch vụ
                 </Typography>
-                <Grid2 container>
+                <Grid2 container spacing={2}>
                     <Grid2 size={6}>
-                        <Typography variant="h2" fontWeight={"bold"} sx={{ my: 2 }}>We offer a wide range of services to cater to your dental needs.</Typography>
-                        <Typography variant="body1" color="gray" fontSize={'1.3rem'} sx={{ my: 2 }}>
-                            At our dental clinic, we are committed to delivering exceptional, personalized care with a focus on your comfort and well-being. We promise to provide top-quality services at preferential prices, ensuring that you receive the best treatment without compromising on affordability.
-                        </Typography>
-                        <Typography variant="h4" color="primary" textTransform='uppercase' fontWeight={"bold"} sx={{ mt: 6 }} onClick={() => navigate('/dashboard/appointment')}>
-                            Book an appointment now
+                        <Typography variant="h3" fontWeight={"bold"} sx={{ my: 2 }}>Thông tin chi tiết dịch vụ UNISTARS</Typography>
+                        <Typography variant="body1" color="gray" fontSize={'1.2rem'} sx={{ my: 2 }} textAlign={'justify'}>
+                            UNISTARS cung cấp các giải pháp bảo vệ môi trường thông qua mô hình thu gom và tái chế rác thải với chi phí ưu đãi, kết hợp nền tảng thương mại điện tử và cộng đồng xanh. Chúng tôi hướng đến việc xây dựng hệ sinh thái bền vững từ nguồn rác thải dồi dào, giúp khách hàng không chỉ xử lý rác hiệu quả mà còn tham gia vào chuỗi giá trị xanh, đóng góp cho cộng đồng và môi trường.                        </Typography>
+                        <Typography variant="h4" color="primary" textTransform='uppercase' fontWeight={"bold"} sx={{ mt: 6 }}>
+                            Đăng ký dịch vụ ngay tại đây
                         </Typography>
                         <Button variant="contained" color="primary" size="large" sx={{ mt: 2, padding: '20px 40px', borderRadius: '40px', fontWeight: 'bold', fontSize: '1.3rem' }} onClick={() => navigate('/dashboard//appointment')}>
-                            Book Appointment
+                            Đăng ký dịch vụ
                         </Button>
                     </Grid2>
                     <Grid2 size={6}>
@@ -77,12 +76,6 @@ const Services = () => {
                                             WebkitBoxOrient: 'vertical',
                                             height: 100
                                         }}>{item.description}</Typography>
-                                        <Typography variant="h6" fontWeight={"bold"} textAlign={'center'} color="secondary" sx={{ mt: 2 }}>
-                                            ${item.price.min} - ${item.price.max}
-                                        </Typography>
-                                        <Typography variant="h6" fontWeight={"bold"} textAlign={'center'} color="secondary">
-                                            Per {item.price.unit.toUpperCase()}
-                                        </Typography>
                                     </StyledStack>
                                 ))
                             }

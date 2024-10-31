@@ -57,13 +57,12 @@ export default function Footer() {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={4}>
                         <Logo variant="h6">
-                            🦷 Molarrific
+                            ⭐ Unistars
                         </Logo>
                         <Typography variant="body2" sx={{ mb: 2 }} color='whitesmoke'>
-                            At our clinic, we prioritize exceptional dental care by combining the latest treatments with a highly experienced team, ensuring your comfort and oral health are in the best hands. With modern equipment and comprehensive services, we help keep your smile bright and healthy.
-                        </Typography>
+                            UNISTARS là dự án khởi nghiệp bền vững với mục tiêu xây dựng một hệ sinh thái kinh tế tuần hoàn từ việc thu gom, tái chế rác thải tại các trường đại học và cộng đồng, tích hợp nền tảng thương mại điện tử và mạng xã hội xanh                        </Typography>
                         <Typography variant="body2" fontWeight={"bold"} sx={{ mb: 1 }} color="#fff">
-                            FOLLOW US ON
+                            THEO DÕI CHÚNG TÔI
                         </Typography>
                         <Box>
                             <SocialIcon aria-label="facebook">
@@ -79,19 +78,19 @@ export default function Footer() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Typography variant="h6" sx={{ mb: 2 }} color="white" fontWeight={"bold"}>
-                            Quick Links
+                            Mục lục
                         </Typography>
                         <Box display="flex" flexDirection="column">
-                            <QuickLink href="/">Home</QuickLink>
-                            <QuickLink href="/#products">Products</QuickLink>
-                            <QuickLink href="/#services">Services</QuickLink>
-                            <QuickLink href="/#testimonial">Testimonial</QuickLink>
-                            <QuickLink href="/#about-us">About Us</QuickLink>
+                            <QuickLink href="/">Trang chủ</QuickLink>
+                            <QuickLink href="/#products">Sản phẩm</QuickLink>
+                            <QuickLink href="/#services">Dịch vụ</QuickLink>
+                            <QuickLink href="/#blogs">Blog</QuickLink>
+                            <QuickLink href="/#about-us">Giới thiệu</QuickLink>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Typography variant="h6" sx={{ mb: 2 }} color="white" fontWeight={"bold"}>
-                            CONTACT & INFORMATION
+                            THÔNG TIN LIÊN HỆ
                         </Typography>
                         <ContactItem>
                             <ContactIcon>
@@ -99,9 +98,9 @@ export default function Footer() {
                             </ContactIcon>
                             <Box>
                                 <Typography variant="body2" color="whitesmoke">
-                                    Phone Number
+                                    Số điện thoại
                                 </Typography>
-                                <Typography variant="body1">+84 969 696 969</Typography>
+                                <Typography variant="body1" color='lightgray'>+84 969 696 969</Typography>
                             </Box>
                         </ContactItem>
                         <ContactItem>
@@ -110,9 +109,9 @@ export default function Footer() {
                             </ContactIcon>
                             <Box>
                                 <Typography variant="body2" color="whitesmoke">
-                                    Open Hour
+                                    Mở cửa
                                 </Typography>
-                                <Typography variant="body1">09:00 AM - 18:00 PM</Typography>
+                                <Typography variant="body1" color='lightgray'>24/24</Typography>
                             </Box>
                         </ContactItem>
                         <ContactItem>
@@ -121,26 +120,13 @@ export default function Footer() {
                             </ContactIcon>
                             <Box>
                                 <Typography variant="body2" color="whitesmoke">
-                                    Clinic Address
+                                    Địa chỉ
                                 </Typography>
-                                <Typography variant="body1">279 Nguyen Tri Phuong, Ward 5, District 10</Typography>
+                                <Typography variant="body1" color='lightgray'>279 Nguyen Tri Phuong, Ward 5, District 10</Typography>
                             </Box>
                         </ContactItem>
                     </Grid>
                 </Grid>
-                <Box mt={4} display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant="body2" color="#fff">
-                        © Dental Clinic. All Right Reserved
-                    </Typography>
-                    <Box>
-                        <QuickLink href="#" sx={{ mr: 2 }}>
-                            Terms of Use
-                        </QuickLink>
-                        <QuickLink href="#">
-                            Privacy Policy
-                        </QuickLink>
-                    </Box>
-                </Box>
             </Container>
         </FooterContainer>
     );

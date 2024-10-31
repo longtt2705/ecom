@@ -25,9 +25,9 @@ export default function Header() {
         <>
             <NavLink to='/' style={{ textDecoration: 'none' }}>
                 <Stack direction={'row'} spacing={2} justifyContent={'center'} alignItems={'center'}>
-                    <StyledImage src="/images/tooth.png" alt="tooth" />
+                    <StyledImage src="/images/green_leaves_logo.jpg" alt="tooth" />
                     <Typography variant="h5" fontWeight={'bolder'} flexGrow={1} fontSize={'1.5rem'}>
-                        Molarrific Clinic
+                        Unistars
                     </Typography>
                 </Stack>
             </NavLink>

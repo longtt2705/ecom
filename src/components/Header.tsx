@@ -52,17 +52,17 @@ const Header: React.FC = () => {
       <StyledToolbar>
         <NavLink to='/' style={{ textDecoration: 'none' }}>
           <Stack direction={'row'} spacing={2} justifyContent={'center'} alignItems={'center'}>
-            <StyledImage src="/images/tooth.png" alt="tooth" />
-            <Typography variant="h5" fontWeight={'bolder'} flexGrow={1} fontSize={'1.8rem'}>
-              Molarrific Clinic
+            <StyledImage src="/images/green_leaves_logo.jpg" alt="tooth" />
+            <Typography variant="h5" fontWeight={'bolder'} flexGrow={1} fontSize={'1.8rem'} textTransform={'uppercase'}>
+              Unistars
             </Typography>
           </Stack>
         </NavLink>
         <Stack direction={'row'} spacing={2}>
-          <StyledButton href='/'>Home</StyledButton>
-          <StyledButton href='/#products'>Products</StyledButton>
-          <StyledButton href='/#services'>Services</StyledButton>
-          <StyledButton href='/#testimonial'>Testimonial</StyledButton>
+          <StyledButton href='/'>Trang chủ</StyledButton>
+          <StyledButton href='/#products'>Sản phẩm</StyledButton>
+          <StyledButton href='/#services'>Dịch vụ</StyledButton>
+          <StyledButton href='/#blogs'>Blog</StyledButton>
         </Stack>
         <Stack direction={"row"} spacing={2}>
           <IconButton onClick={() => navigate('/cart')}>
@@ -75,10 +75,10 @@ const Header: React.FC = () => {
           </IconButton>
           <BookButton color="primary" variant='contained' onClick={
             () => navigate('/dashboard/appointment')
-          }>Book Appointment</BookButton>
+          }>Thử Thách Xanh</BookButton>
           <BookButton color="primary" variant='contained' onClick={
             () => user ? navigate('dashboard') : navigate('/login')
-          }>{user ? 'Go to Dashboard' : 'Login Now'}</BookButton>
+          }>{'Trang Cá Nhân'}</BookButton>
         </Stack>
       </StyledToolbar>
     </StyledAppBar>

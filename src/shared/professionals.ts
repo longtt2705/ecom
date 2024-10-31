@@ -3,38 +3,27 @@ export type Product = {
     image: string,
     name: string,
     description: string,
-    specialty: string
 }
 
 const items: Product[] = [
         {
             id: 1,
-            image: '/images/doctor1.png',
-            name: 'Hai Pham',
-            specialty: 'Cosmetic Dentistry Specialist',
-            description: 'Dr. Hai specializes in enhancing smiles through veneers, teeth whitening, and bonding. With over 10 years of experience, he is passionate about providing patients with natural-looking and beautiful results.',
+            image: '/images/unep.jpg',
+            name: 'UNEP (Môi trường Liên Hợp Quốc)',
+            description: 'UNEP hỗ trợ các dự án và chiến dịch của UNISTARS, đặc biệt là những sáng kiến nâng cao nhận thức về rác thải và tiêu dùng bền vững, góp phần bảo vệ hệ sinh thái toàn cầu.',
         },
         {
             id: 2,
-            image: '/images/doctor2.png',
-            name: 'Dat Bui',
-            description: 'Dr. Dat has a strong focus on dental implantology, restoring missing teeth with precision and care. He has performed hundreds of successful implant surgeries, ensuring both function and aesthetics are seamlessly restored.',
-            specialty: 'Teeth Whitening Specialist'
+            image: '/images/wwf.jpg',
+            name: 'WWF (Quỹ Quốc tế Bảo vệ Thiên nhiên)',
+            description: 'WWF hợp tác với UNISTARS để bảo vệ các tài nguyên thiên nhiên, đồng thời tăng cường các sáng kiến về tái chế và bảo tồn hệ sinh thái.',
         },
         {
             id: 3,
-            image: '/images/doctor3.png',
-            name: 'Nhi Nguyen',
-            description: 'With a keen expertise in braces and Invisalign, Dr. Pham has helped countless patients achieve straight and healthy smiles. She brings over 12 years of orthodontic experience, treating both children and adults.',
-            specialty: 'Orthodontics'
+            image: '/images/dhqghn.jpg',
+            name: 'Đại học Quốc gia Hà Nội',
+            description: 'Trường đại học hàng đầu Việt Nam trong các chương trình bảo vệ môi trường, là đối tác quan trọng trong việc nâng cao nhận thức về tái chế và phát triển bền vững cho thế hệ sinh viên tại Việt Nam.',
         },
-        {
-            id: 4,
-            image: '/images/doctor4.png',
-            name: 'Vy Khanh',
-            description: 'Dr. Vy is highly skilled in complex extractions, wisdom teeth removal, and surgical procedures. With over 15 years of surgical experience, he ensures safe, comfortable, and effective oral surgery for all patients.',
-            specialty: 'Oral Surgery'
-        }
     ]
 
 export default items;

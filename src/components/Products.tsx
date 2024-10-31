@@ -38,7 +38,7 @@ const StyledStack = styled(Stack)({
 const StyledImage = styled('img')({
     marginTop: '20px',
     width: '300px',
-    height: '300px',
+    height: '260px',
     borderRadius: '40px',
 });
 
@@ -47,6 +47,7 @@ const StyledImage = styled('img')({
 const StyledButton = styled(Button)({
     padding: '10px',
     borderRadius: '40px',
+    textTransform: 'capitalize'
 });
 
 const Products = () => {
@@ -61,29 +62,27 @@ const Products = () => {
     return (
         <div id={'products'}>
             <Container maxWidth="lg" sx={{ my: 10 }}>
-                <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"}>
-                    Our Products
+                <Typography variant="h2" align="center" gutterBottom color="primary" fontWeight={"bolder"} textTransform={'uppercase'}>
+                    Sản phẩm
                 </Typography>
                 <Carousel responsive={responsive}>
                     {
                         items.map((item, index) => (
                             <StyledStack key={index} alignItems={'center'} spacing={1}>
                                 <StyledImage src={item.image} alt={item.title} />
-                                <Typography variant="h5" fontWeight={"bold"} textAlign={'center'} sx={{ my: 2 }}>{item.title}</Typography>
-                                <Typography variant="body1" color="gray" textAlign={'center'} sx={{
+                                <Typography variant="h5" fontWeight={"bold"} textAlign={'center'} sx={{ my: 2 }}>{item.title}</Typography><Typography variant="body1" color="gray" textAlign={'center'} sx={{
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
                                     display: '-webkit-box',
                                     WebkitLineClamp: '3',
                                     WebkitBoxOrient: 'vertical'
-                                }}>{item.description}</Typography>
-                                <NavLink to={`/products/${item.id}`} color="primary">Read More</NavLink>
+                                }}>{item.description}</Typography>                                <NavLink to={`/products/${item.id}`} color="primary">Xem chi tiết sản phẩm</NavLink>
                                 <Typography variant="h6" fontWeight={"bold"} textAlign={'center'} color="secondary" sx={{ mt: 2 }}>${item.price}</Typography>
-                                <StyledButton variant="outlined" color="primary" fullWidth onClick={() => addToCartHandler(item)}>Add to Cart</StyledButton>
+                                <StyledButton variant="outlined" color="primary" fullWidth onClick={() => addToCartHandler(item)}>Thêm vào giỏ hàng</StyledButton>
                                 <StyledButton variant="contained" color="primary" fullWidth onClick={() => {
                                     dispatch(setItemToCheckout([{ ...item, quantity: 1, totalPrice: item.price }]));
                                     navigate('/checkout');
-                                }}>Buy Now</StyledButton>
+                                }}>Mua ngay</StyledButton>
                             </StyledStack>
                         ))
                     }
