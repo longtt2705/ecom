@@ -69,6 +69,10 @@ const Challenge = Loader(
   lazy(() => import('./pages/Challenge'))
 );
 
+const Blog = Loader(
+  lazy(() => import('./pages/Blog'))
+);
+
 const routes = (isAuth: boolean): RouteObject[] => {
   return [
     {
@@ -119,6 +123,10 @@ const routes = (isAuth: boolean): RouteObject[] => {
         {
           path: 'challenges',
           element: <Challenge />
+        },
+        {
+          path: 'blogs',
+          element: <Blog />
         }
       ]
     },

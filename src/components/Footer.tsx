@@ -5,6 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Box, Container, Grid, IconButton, Link, styled, Typography } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -51,6 +52,7 @@ const ContactIcon = styled(Box)(({ theme }) => ({
 }));
 
 export default function Footer() {
+    const navigate = useNavigate();
     return (
         <FooterContainer>
             <Container maxWidth="lg">
@@ -84,7 +86,7 @@ export default function Footer() {
                             <QuickLink href="/">Trang chủ</QuickLink>
                             <QuickLink href="/#products">Sản phẩm</QuickLink>
                             <QuickLink href="/#services">Dịch vụ</QuickLink>
-                            <QuickLink href="/#blogs">Blog</QuickLink>
+                            <QuickLink onClick={() => navigate('/blogs')}>Blog</QuickLink>
                             <QuickLink href="/#about-us">Giới thiệu</QuickLink>
                         </Box>
                     </Grid>

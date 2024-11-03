@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           <StyledButton href='/'>Trang chủ</StyledButton>
           <StyledButton href='/#products'>Sản phẩm</StyledButton>
           <StyledButton href='/#services'>Dịch vụ</StyledButton>
-          <StyledButton href='/#blogs'>Blog</StyledButton>
+          <StyledButton href='#' onClick={() => navigate('/blogs')}>Blog</StyledButton>
         </Stack>
         <Stack direction={"row"} spacing={2}>
           <IconButton onClick={() => navigate('/cart')}>
