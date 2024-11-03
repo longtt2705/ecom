@@ -74,7 +74,7 @@ const Header: React.FC = () => {
             </Badge>
           </IconButton>
           <BookButton color="primary" variant='contained' onClick={
-            () => navigate('/dashboard/appointment')
+            () => navigate('/challenges')
           }>Thử Thách Xanh</BookButton>
           <BookButton color="primary" variant='contained' onClick={
             () => user ? navigate('dashboard') : navigate('/login')

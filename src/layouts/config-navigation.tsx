@@ -7,27 +7,27 @@ import FeedbackIcon from '@mui/icons-material/Feedback';
 
 const navConfig = [
   {
-    title: 'User Profile',
+    title: 'Trang Cá Nhân',
     path: '/dashboard/details',
     icon: <AssignmentIndIcon />
   },
   {
-    title: 'Bookings History',
+    title: 'Lịch Sử Mua',
     path: '/dashboard/bookings',
     icon: <DomainAddIcon />
   },
   {
-    title: 'Orders History',
+    title: 'Lịch Sử Đặt Dịch Vụ',
     path: '/dashboard/orders-history',
     icon: <ShoppingBagIcon />
   },
   {
-    title: 'Đặt dịch vụ',
+    title: 'Tích Điểm',
     path: '/dashboard/appointment',
     icon: <LocalHospitalIcon />
   },
   {
-    title: 'Feedback',
+    title: 'Đăng Bài',
     path: '/dashboard/feedback',
     icon: <FeedbackIcon />
   }

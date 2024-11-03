@@ -65,6 +65,10 @@ const Feedback = Loader(
   lazy(() => import('./pages/Feedback'))
 );
 
+const Challenge = Loader(
+  lazy(() => import('./pages/Challenge'))
+);
+
 const routes = (isAuth: boolean): RouteObject[] => {
   return [
     {
@@ -111,6 +115,10 @@ const routes = (isAuth: boolean): RouteObject[] => {
         {
           path: '*',
           element: <Status404 />
+        },
+        {
+          path: 'challenges',
+          element: <Challenge />
         }
       ]
     },
@@ -145,7 +153,7 @@ const routes = (isAuth: boolean): RouteObject[] => {
         {
           path: 'feedback',
           element: <Feedback />
-        }
+        },
       ]
     }
   ];

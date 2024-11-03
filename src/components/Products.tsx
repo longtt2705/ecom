@@ -32,7 +32,7 @@ const StyledStack = styled(Stack)({
     padding: '15px',
     margin: '20px',
     boxShadow: '0 0 10px 2px rgba(0,0,0,0.1)',
-    height: 600
+    height: 550
 });
 
 const StyledImage = styled('img')({
@@ -77,7 +77,7 @@ const Products = () => {
                                     WebkitLineClamp: '3',
                                     WebkitBoxOrient: 'vertical'
                                 }}>{item.description}</Typography>                                <NavLink to={`/products/${item.id}`} color="primary">Xem chi tiết sản phẩm</NavLink>
-                                <Typography variant="h6" fontWeight={"bold"} textAlign={'center'} color="secondary" sx={{ mt: 2 }}>${item.price}</Typography>
+                                {/* <Typography variant="h6" fontWeight={"bold"} textAlign={'center'} color="secondary" sx={{ mt: 2 }}>${item.price}</Typography> */}
                                 <StyledButton variant="outlined" color="primary" fullWidth onClick={() => addToCartHandler(item)}>Thêm vào giỏ hàng</StyledButton>
                                 <StyledButton variant="contained" color="primary" fullWidth onClick={() => {
                                     dispatch(setItemToCheckout([{ ...item, quantity: 1, totalPrice: item.price }]));
